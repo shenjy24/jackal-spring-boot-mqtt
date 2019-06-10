@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 public class MqttProperties {
     private String username;
     private String password;
-    private String hostUrl;
+    private String[] hostUrl;
     private String clientId;
     private String defaultTopic;
     private Long connectionTimeout;

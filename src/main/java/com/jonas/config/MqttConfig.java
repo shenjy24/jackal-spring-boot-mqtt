@@ -35,7 +35,7 @@ public class MqttConfig {
         MqttConnectOptions options = new MqttConnectOptions();
         options.setUserName(mqttProp.getUsername());
         options.setPassword(mqttProp.getPassword().toCharArray());
-        options.setServerURIs(new String[]{mqttProp.getHostUrl()});
+        options.setServerURIs(mqttProp.getHostUrl());
         return options;
     }
 

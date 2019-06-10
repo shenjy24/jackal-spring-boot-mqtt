@@ -5,11 +5,13 @@ server:
 ## host-url: MQTT-服务器连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613，tcp://192.168.2.133:61613
 ## client-id: MQTT-连接服务器默认客户端ID
 ## default-topic: MQTT-默认的消息推送主题，实际可在调用接口时指定
-##
+## connection-timeout: 连接超时时间
+## subscription-topic: 客户端订阅的主题
 mqtt:
   username: admin
   password: public
-  host-url: tcp://localhost:1883
+  host-url:
+    - tcp://localhost:1883
   client-id: mqttId
   default-topic: topic
   connection-timeout: 3000
