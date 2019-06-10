@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 #### MQTT配置
 ## host-url: MQTT-服务器连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613，tcp://192.168.2.133:61613
@@ -12,9 +12,9 @@ mqtt:
   password: public
   host-url:
     - tcp://localhost:1883
-  client-id: mqttId
+  client-id: mqttId2
   default-topic: topic
   connection-timeout: 3000
   subscription-topic:
-    - hello
-    - hello1
+    - $share/group1/hello
+    - $share/group1/hello1
