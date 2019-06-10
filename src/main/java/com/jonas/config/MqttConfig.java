@@ -82,16 +82,6 @@ public class MqttConfig {
     @Bean
     @ServiceActivator(inputChannel = "mqttInputChannel")
     public MessageHandler mqttInputHandler() {
-        return new MessageHandler() {
-            @Override
-            public void handleMessage(Message<?> message) throws MessagingException {
-                String topic = message.getHeaders().get("mqtt_receivedTopic").toString();
-                if ("hello".equalsIgnoreCase(topic)) {
-                    System.out.println("hello, " + message.getPayload().toString());
-                } else {
-                    System.out.println("hi, " + message.getPayload().toString());
-                }
-            }
-        };
+        return new ReceiveMessageHandler();
     }
 }
