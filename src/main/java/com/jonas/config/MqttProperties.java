@@ -20,4 +20,6 @@ public class MqttProperties {
     private String hostUrl;
     private String clientId;
     private String defaultTopic;
+    private Long connectionTimeout;
+    private String[] subscriptionTopic;
 }

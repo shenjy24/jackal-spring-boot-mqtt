@@ -18,9 +18,16 @@ public class MqttController {
     @Autowired
     private MqttGateway mqttGateway;
 
+    /**
+     * 发送mqtt消息
+     *
+     * @param data  负载
+     * @param topic 话题
+     * @return
+     */
     @PostMapping("/sendMsg")
-    public String sendMsg(String data) {
-        mqttGateway.sendToMqtt(data, "hello");
+    public String sendMsg(String data, String topic) {
+        mqttGateway.sendToMqtt(data, topic);
         return "success";
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.messaging.handler.annotation.Header;
  *
  * @author shenjy 2019/06/10
  */
-@MessagingGateway(defaultRequestChannel = "mqttOutboundChannel")
+@MessagingGateway(defaultRequestChannel = "mqttOutputChannel")
 public interface MqttGateway {
     void sendToMqtt(String data, @Header(MqttHeaders.TOPIC) String topic);
 }
