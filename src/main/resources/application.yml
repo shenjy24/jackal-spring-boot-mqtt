@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+## MQTT配置
+mqtt:
+  username: admin
+  password: public
+  host-url: tcp://localhost:1883
+  client-id: mqttId
+  default-topic: topic
