@@ -5,7 +5,7 @@ import org.springframework.integration.mqtt.support.MqttHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 
 /**
- * 【 enter the class description 】
+ * 发送消息接口
  *
  * @author shenjy 2019/06/10
  */
