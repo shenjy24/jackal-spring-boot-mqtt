@@ -61,17 +61,13 @@ mqtt:
   host-url:
     - tcp://localhost:1883
   client-id: mqttId2
-  default-topic: topic
+  default-topic: topicA
   connection-timeout: 3000
   subscription-topic:
+    - topicA
     - $share/group1/hello
     - $share/group1/hello1
 ```
-
-subscription-topic 配置规则：
-
-
-
 
 ## Java Config
 #### 通用配置
