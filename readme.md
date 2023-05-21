@@ -48,11 +48,13 @@ unzip emqx-macosx-v3.1.0.zip && cd emqx
 默认配置如下：
 ```yml
 #### MQTT配置
+## username: EMQX的登录用户名
+## password: EMQX的登录密码
 ## host-url: MQTT-服务器连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613，tcp://192.168.2.133:61613
 ## client-id: MQTT-连接服务器默认客户端ID
 ## default-topic: MQTT-默认的消息推送主题，实际可在调用接口时指定
 ## connection-timeout: 连接超时时间
-## subscription-topic: 客户端订阅的主题
+## subscription-topic: 客户端订阅的主题，此处配置的是共享订阅 https://www.emqx.io/docs/zh/v5.0/mqtt/mqtt-shared-subscription.html#%E6%9C%BA%E5%88%B6%E4%BB%8B%E7%BB%8D
 mqtt:
   username: admin
   password: public
@@ -65,6 +67,11 @@ mqtt:
     - $share/group1/hello
     - $share/group1/hello1
 ```
+
+subscription-topic 配置规则：
+
+
+
 
 ## Java Config
 #### 通用配置

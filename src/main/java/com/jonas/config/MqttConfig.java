@@ -1,5 +1,6 @@
 package com.jonas.config;
 
+import com.jonas.mqtt.handler.ReceiveMessageHandler;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,10 +14,8 @@ import org.springframework.integration.mqtt.core.MqttPahoClientFactory;
 import org.springframework.integration.mqtt.inbound.MqttPahoMessageDrivenChannelAdapter;
 import org.springframework.integration.mqtt.outbound.MqttPahoMessageHandler;
 import org.springframework.integration.mqtt.support.DefaultPahoMessageConverter;
-import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHandler;
-import org.springframework.messaging.MessagingException;
 
 /**
  * 【 enter the class description 】
@@ -39,6 +38,9 @@ public class MqttConfig {
         return options;
     }
 
+    /**
+     * 创建MqttPahoClientFactory，设置MQTT Broker连接属性，如果使用SSL验证，也在这里设置。
+     */
     @Bean
     public MqttPahoClientFactory mqttClientFactory() {
         DefaultMqttPahoClientFactory factory = new DefaultMqttPahoClientFactory();
@@ -56,6 +58,7 @@ public class MqttConfig {
     @ServiceActivator(inputChannel = "mqttOutputChannel")
     public MessageHandler mqttOutputHandler() {
         MqttPahoMessageHandler handler = new MqttPahoMessageHandler(mqttProp.getClientId(), mqttClientFactory());
+        // 如果设置成true，即异步，发送消息时将不会阻塞。
         handler.setAsync(true);
         handler.setDefaultTopic(mqttProp.getDefaultTopic());
         return handler;

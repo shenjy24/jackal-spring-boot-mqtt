@@ -6,7 +6,7 @@ server:
 ## client-id: MQTT-连接服务器默认客户端ID
 ## default-topic: MQTT-默认的消息推送主题，实际可在调用接口时指定
 ## connection-timeout: 连接超时时间
-## subscription-topic: 客户端订阅的主题
+## subscription-topic: 客户端订阅的主题，以下配置的是共享订阅 https://www.emqx.io/docs/zh/v5.0/mqtt/mqtt-shared-subscription.html#%E5%B8%A6%E7%BE%A4%E7%BB%84%E7%9A%84%E5%85%B1%E4%BA%AB%E8%AE%A2%E9%98%85
 mqtt:
   username: admin
   password: public

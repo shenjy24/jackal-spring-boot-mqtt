@@ -1,4 +1,4 @@
-package com.jonas.config;
+package com.jonas.mqtt.handler;
 
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHandler;

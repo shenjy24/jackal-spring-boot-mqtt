@@ -1,6 +1,6 @@
 package com.jonas.controller;
 
-import com.jonas.mqtt.MqttGateway;
+import com.jonas.mqtt.gateway.MqttGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
