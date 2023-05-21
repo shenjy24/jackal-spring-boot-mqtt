@@ -20,7 +20,7 @@ unzip emqx-macosx-v3.1.0.zip && cd emqx
 ./bin/emqx stop
 ```
 
-控制台地址: http://127.0.0.1:18083，默认用户名: admin，密码：public
+控制台地址: http://127.0.0.1:18083， 默认用户名: admin，密码：public
 
 ## Java客户端选型
 选择spring boot集成的spring-integration-mqtt
